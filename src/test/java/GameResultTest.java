@@ -31,4 +31,21 @@ public class GameResultTest {
                 );
     }
 
+    @DisplayName("같은_수가_같은_자리에_있으면_스트라이크이다")
+    @ParameterizedTest
+    @MethodSource("provider_같은_수가_같은_자리에_있으면_스트라이크이다")
+    void 같은_수가_같은_자리에_있으면_스트라이크이다(BaseballGameNumber answer, BaseballGameNumber guess, int expectedStrike){
+        GameResult result = new GameResult(answer, guess);
+        assertThat(result.strike())
+                .isEqualTo(expectedStrike);
+    }
+    static Stream<Arguments> provider_같은_수가_같은_자리에_있으면_스트라이크이다(){
+        BaseballGameNumber answer = new BaseballGameNumber(1,2,3);
+        return Stream.of(
+                Arguments.of(answer, new BaseballGameNumber(4,5,6), 0),
+                Arguments.of(answer, new BaseballGameNumber(1,5,6), 1),
+                Arguments.of(answer, new BaseballGameNumber(1,2,6), 2),
+                Arguments.of(answer, new BaseballGameNumber(1,2,3), 3)
+        );
+    }
 }
