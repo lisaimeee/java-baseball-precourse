@@ -16,6 +16,9 @@
   * [x] 같은 수가 전혀 없으면 낫싱이다. 
 * 상대방(GameOperatorTest)
   * [x] 1-9 까지 서로 다른 임의의 수 3개를 선택한다.
+* 결과메시지(GameResultMessage)
+  * [x] GameResult 를 받아서 프린트할 메시지로 변경해 준다
+  
 * 출력뷰(PrintView)
   * [] 게임 진행 메시지를 출력한다. 
 * 입력뷰(InputView)
