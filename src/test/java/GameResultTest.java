@@ -1,4 +1,3 @@
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -40,17 +39,11 @@ public class GameResultTest {
                 .isEqualTo(expectedStrike);
     }
     static Stream<Arguments> provider_같은_수가_같은_자리에_있으면_스트라이크이다(){
-        BaseballGameNumber answer = new BaseballGameNumber(1,2,3);
-        BaseballGameNumber 일치하지_않음 = new BaseballGameNumber(4,5,6);
-        BaseballGameNumber 같은수_같은자리_하나일치 = new BaseballGameNumber(1,5,6);
-        BaseballGameNumber 같은수_같은자리_두개일치 = new BaseballGameNumber(1,2,6);
-        BaseballGameNumber 같은수_같은자리_세개일치 = new BaseballGameNumber(1,2,3);
-
         return Stream.of(
-                Arguments.of(answer, 일치하지_않음, 0),
-                Arguments.of(answer, 같은수_같은자리_하나일치, 1),
-                Arguments.of(answer, 같은수_같은자리_두개일치, 2),
-                Arguments.of(answer, 같은수_같은자리_세개일치, 3)
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture.낫싱, 0),
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture._1스트라이크, 1),
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture._2스트라이크, 2),
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture._3스트라이크, 3)
         );
     }
 
@@ -64,27 +57,19 @@ public class GameResultTest {
     }
 
     static Stream<Arguments> provider_같은_수가_다른_자리에_있으면_볼이다(){
-        BaseballGameNumber answer = new BaseballGameNumber(1,2,3);
-        BaseballGameNumber 일치하는_수_없음 = new BaseballGameNumber(4,5,6);
-        BaseballGameNumber 같은수_모두_같은자리 = new BaseballGameNumber(1,2,3);
-        BaseballGameNumber 다른자리_하나_일치 = new BaseballGameNumber(4,1,6);
-        BaseballGameNumber 다른자리_둘_일치 = new BaseballGameNumber(2,3,6);
-        BaseballGameNumber 다른자리_셋_일치 = new BaseballGameNumber(3,1,2);
         return Stream.of(
-                Arguments.of(answer, 일치하는_수_없음, 0),
-                Arguments.of(answer, 같은수_모두_같은자리, 0),
-                Arguments.of(answer, 다른자리_하나_일치, 1),
-                Arguments.of(answer, 다른자리_둘_일치, 2),
-                Arguments.of(answer, 다른자리_셋_일치, 3)
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture.낫싱, 0),
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture._3스트라이크, 0),
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture._1볼, 1),
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture._2볼, 2),
+                Arguments.of(BaseballGameNumberFixture.정답, BaseballGameNumberFixture._3볼, 3)
         );
     }
 
     @DisplayName("같은_수가_전혀_없으면_낫싱이다")
     @Test
     void 같은_수가_전혀_없으면_낫싱이다(){
-        BaseballGameNumber answer = new BaseballGameNumber(1,2,3);
-        BaseballGameNumber 일치하는_수_없음 = new BaseballGameNumber(4,5,6);
-        GameResult result = new GameResult(answer, 일치하는_수_없음);
+        GameResult result = new GameResult(BaseballGameNumberFixture.정답, BaseballGameNumberFixture.낫싱);
         assertThat(result.ball())
                 .isEqualTo(0);
         assertThat(result.strike())
