@@ -62,6 +62,7 @@ public class GameResultTest {
         assertThat(result.ball())
                 .isEqualTo(expectedBall);
     }
+
     static Stream<Arguments> provider_같은_수가_다른_자리에_있으면_볼이다(){
         BaseballGameNumber answer = new BaseballGameNumber(1,2,3);
         BaseballGameNumber 일치하는_수_없음 = new BaseballGameNumber(4,5,6);
@@ -77,4 +78,19 @@ public class GameResultTest {
                 Arguments.of(answer, 다른자리_셋_일치, 3)
         );
     }
+
+    @DisplayName("같은_수가_전혀_없으면_낫싱이다")
+    @Test
+    void 같은_수가_전혀_없으면_낫싱이다(){
+        BaseballGameNumber answer = new BaseballGameNumber(1,2,3);
+        BaseballGameNumber 일치하는_수_없음 = new BaseballGameNumber(4,5,6);
+        GameResult result = new GameResult(answer, 일치하는_수_없음);
+        assertThat(result.ball())
+                .isEqualTo(0);
+        assertThat(result.strike())
+                .isEqualTo(0);
+        assertThat(result.isNothing())
+                .isTrue();
+    }
+
 }

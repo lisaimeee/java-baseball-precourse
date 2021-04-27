@@ -50,4 +50,8 @@ public class GameResult {
     public int ball() {
         return ball;
     }
+
+    public boolean isNothing() {
+        return strike == 0 && ball == 0;
+    }
 }
