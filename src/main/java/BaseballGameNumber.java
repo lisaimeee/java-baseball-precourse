@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class BaseballGameNumber {
-    private final static List<Integer> _1To9NumberList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+    public final static List<Integer> _1To9NumberList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
     private final static int BASEBALL_GAME_NUMBER_SIZE = 3;
     private final int first;
     private final int second;
