@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class BaseballGameNumber {
@@ -48,5 +49,18 @@ public class BaseballGameNumber {
 
     public int third() {
         return third;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BaseballGameNumber that = (BaseballGameNumber) o;
+        return first == that.first && second == that.second && third == that.third;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third);
     }
 }
