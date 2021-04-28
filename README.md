@@ -5,3 +5,40 @@
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
+
+## 기능 목록
+* 숫자(domain.BaseballGameNumber)
+  * [x] 숫자는 1-9 까지 서로 다른 수로 이루어진 3자리의 수이다
+* 결과(domain.GameResult)
+  * [x] 정답 또는 힌트를 제공한다
+  * [x] 같은 수가 같은 자리에 있으면 스트라이크이다.
+  * [x] 같은 수가 다른 자리에 있으면 볼이다.
+  * [x] 같은 수가 전혀 없으면 낫싱이다. 
+* 상대방(domain.GameOperatorTest)
+  * [x] 1-9 까지 서로 다른 임의의 수 3개를 선택한다.
+* 결과메시지(view.GameResultMessage)
+  * [x] domain.GameResult 를 받아서 프린트할 메시지로 변경해 준다
+  
+* 플레이어 재시도 의사(controller.RetryIntention)
+  * [x] 1 을 입력하면 재시도, 2를 입력하면 게임 종료 의미이다. 
+  
+* 출력뷰(view.PrintView)
+  * [x] 게임 진행 메시지를 출력한다.
+  * [x] 플레이어에게 재시도 의사를 묻는 메시지를 출력한다. 
+  * [x] 에러메시지를 출력한다.
+
+* 입력뷰(view.InputView)
+  * [x] 플레이어가 추측하는 컴퓨터가 생각하고 있는 3개의 숫자를 입력받는다.
+  * [x] 게임 종료 후 재시도 의사를 입력받는다.
+  
+* 컨트롤러(controller.Controller)
+  * [x] 출력을 제공한다. 
+  * [x] 입력을 받아서 컴퓨터에 전달한다. 
+  * [x] 플레이어가 정답을 모두 맞추면 게임을 종료한다. 
+  * [x] 플레이어의 재시도 의사에 따라 게임을 새로 시작하거나 종료한다.
+  
+* 어플리케이션(BaseballApplication)
+  * [x] 게임 실행 진입점(main 메서드)를 제공한다.
+ 
+
+
