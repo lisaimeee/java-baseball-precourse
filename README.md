@@ -19,6 +19,9 @@
 * 결과메시지(GameResultMessage)
   * [x] GameResult 를 받아서 프린트할 메시지로 변경해 준다
   
+* 플레이어 재시도 의사(RetryIntention)
+  * [x] 1 을 입력하면 재시도, 2를 입력하면 게임 종료 의미이다. 
+  
 * 출력뷰(PrintView)
   * [x] 게임 진행 메시지를 출력한다. 
 * 입력뷰(InputView)
