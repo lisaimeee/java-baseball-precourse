@@ -3,7 +3,7 @@ public class PrintView {
     private static final int TRY_ANOTHER_GAME = 1;
     private static final int EXIT_GAME = 2;
     private static final String NUMBER_INPUT_MESSAGE = "숫자를 입력해주세요: ";
-    public static final String RETRY_MESSAGE = "게임을 새로 시작하려면 1,종료하려면 2를 입력하세요.\n";
+    public static final String RETRY_MESSAGE = "게임을 새로 시작하려면 1,종료하려면 2를 입력하세요.";
 
     private PrintView() {
 
