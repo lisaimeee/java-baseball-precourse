@@ -1,3 +1,7 @@
+package domain;
+
+import domain.BaseballGameNumber;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

@@ -1,3 +1,7 @@
+package view;
+
+import domain.GameResult;
+
 public class PrintView {
 
     private static final int TRY_ANOTHER_GAME = 1;

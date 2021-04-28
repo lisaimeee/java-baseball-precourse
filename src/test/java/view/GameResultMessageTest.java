@@ -1,3 +1,7 @@
+package view;
+
+import domain.BaseballGameNumberFixture;
+import domain.GameResult;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -6,7 +10,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class GameResultMessageTest {
+public class GameResultMessageTest {
 
     @ParameterizedTest
     @MethodSource("provider_GameResult_를_받아서_프린트할_메시지로_변경한다")

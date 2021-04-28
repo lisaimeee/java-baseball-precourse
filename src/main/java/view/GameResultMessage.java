@@ -1,3 +1,7 @@
+package view;
+
+import domain.GameResult;
+
 public class GameResultMessage {
     private static final String STRIKE_MESSAGE = "%d 스트라이크";
     private static final String BALL_MESSAGE = "%d 볼";

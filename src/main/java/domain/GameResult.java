@@ -1,3 +1,5 @@
+package domain;
+
 public class GameResult {
     private final BaseballGameNumber answer;
     private final BaseballGameNumber guess;

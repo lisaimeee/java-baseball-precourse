@@ -1,3 +1,11 @@
+package controller;
+
+import domain.BaseballGameNumber;
+import domain.GameOperator;
+import domain.GameResult;
+import view.InputView;
+import view.PrintView;
+
 public class Controller {
 
     public void startGame() {
@@ -28,7 +36,7 @@ public class Controller {
         }
     }
 
-    private RetryIntention askUserRetryOrExit() {
+    public RetryIntention askUserRetryOrExit() {
         PrintView.printRetryMessage();
         return InputView.retryOrExit();
     }

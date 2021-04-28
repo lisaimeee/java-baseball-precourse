@@ -1,3 +1,7 @@
+package domain;
+
+import domain.BaseballGameNumber;
+
 public class BaseballGameNumberFixture {
     private BaseballGameNumberFixture() {
 

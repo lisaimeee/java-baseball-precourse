@@ -1,3 +1,5 @@
+package controller;
+
 public enum RetryIntention {
     RETRY(1, true),
     EXIT(2, false);
