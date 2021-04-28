@@ -20,6 +20,17 @@ public class BaseballGameNumber {
         this.third = third;
     }
 
+    public static BaseballGameNumber of(List<Integer> numbers) {
+        shouldSize3(numbers);
+        return new BaseballGameNumber(numbers.get(0), numbers.get(1), numbers.get(2));
+    }
+
+    private static void shouldSize3(List<Integer> numbers) {
+        if (numbers.size() != BASEBALL_GAME_NUMBER_SIZE) {
+            throw new IllegalArgumentException("사이즈가 3인 리스트를 입력해 주세요.");
+        }
+    }
+
     private void shouldOneToNine(int first, int second, int third) {
         shouldOneToNine(first);
         shouldOneToNine(second);
@@ -34,7 +45,7 @@ public class BaseballGameNumber {
 
     private void shouldUnique(int first, int second, int third) {
         Set<Integer> set = new HashSet<>(Arrays.asList(first, second, third));
-        if(set.size() != BASEBALL_GAME_NUMBER_SIZE){
+        if (set.size() != BASEBALL_GAME_NUMBER_SIZE) {
             throw new IllegalArgumentException("서로 다른 숫자를 입력해주세요.");
         }
     }
